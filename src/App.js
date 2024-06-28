@@ -1,10 +1,9 @@
 import React from 'react';
+import Header from './header';
 
-function App() {
+const App = function() {
   return (
-    <div>
-      <h1>Myirsteactapp</h1>
-    </div>
+    <Header/>
   );
 }
 
