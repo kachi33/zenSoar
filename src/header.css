@@ -1,7 +1,7 @@
 .header{
     display: flex;
     align-items: center;
-    background-color: #f8eec5;
+    background: linear-gradient(45deg, #ffff, #FEFAE0);
     justify-content: space-between;
     padding: 1rem 2rem;
     border-bottom: 1px solid #ccc;
@@ -14,14 +14,13 @@
 .header-logo{
     display: flex;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 10px;
 }
 
 .header-logo img{
     height: 40px;
-    width: 40px;
+    width: auto;
     align-self: center;
-    /* padding-right: 20px; */
     margin: 0 20px;
     border-radius: 10px;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25);
@@ -36,22 +35,123 @@
     margin: 0 20px;
 }
 
+.header-nav{
+    display: flex;
+}
+
 .header-nav ul{
     display: flex;
     list-style: none;
     margin: 0px;
     padding: 0px
-
+    
 }
+
 .header-nav li{
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    font-style: bold;
     padding: 5px;
-    margin: 0 5px;
+    margin: 0 20px;
 }
 
 .header-nav a{
     text-decoration: none;
-    color: black;
+    color: #283618;
+    
+}
 
+.header-collapse{
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    margin-right:20px ;
+    border: 1px solid #ccc;
+    padding: 1px 2px;
+}
+
+.header-dropdown{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: linear-gradient(30deg,  #FEFAE0, #ffff);
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    padding: 0;
+    height: fit-content;
+    margin-top: 0.5rem;
+    display: none; /* initaily hidden */
+  }
+.header-dropdown:hover .dropdown-menu,
+.header-dropdown .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li {
+    padding: 20px;
+    margin: 0;
+    border-bottom: 0.5px solid #ccc;
+}
+.dropdown-menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 10rem;
+  }
+
+  /* .dropdown-menu a:hover {
+    background-color: #f8eec5; /* Optional hover effect */
+    /* 🚧still work in progress..... */
+
+
+@media (max-width: 768px) {
+    .header{
+        padding: 1rem;
+    }
+    .header-logo img{
+        height: 40px;
+    }
+    .header-nav {
+        display: none;
+    }
+    
+    .header-nav.visible {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .header-collapse{
+        display: block;
+    }
+    .header-dropdown{
+        display: flex;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .header-tagline{
+        display: none;
+    }
+    /* adjust logo and collapse icon */
+
+}
+
+@media (max-width: 480px) {
+    .header{
+        padding: 0.5rem;
+    }
+    .header-logo img{
+        height: 30px;
+    }    
 }
