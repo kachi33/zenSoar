@@ -1,10 +1,11 @@
 import React from 'react';
+import './header.css'
+import Login from './components/auth/Login';
 
-function App() {
+
+const App = function() {
   return (
-    <div>
-      <h1>Myirsteactapp</h1>
-    </div>
+    <Login />
   );
 }
 
