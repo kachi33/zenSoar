@@ -1,11 +1,11 @@
 import React from 'react';
 import './header.css'
-import Header from './components/Header';
+import Login from './components/auth/Login';
 
 
 const App = function() {
   return (
-    <Header />
+    <Login />
   );
 }
 
