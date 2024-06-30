@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 // import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../UI/Logo';
 import exhibitImage from '../../images/exhibit01.jpg';
 
@@ -30,7 +30,7 @@ import exhibitImage from '../../images/exhibit01.jpg';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+// const defaultTheme = createTheme();
 
 export default function SignInSide() {
   const handleSubmit = (event) => {
@@ -43,7 +43,7 @@ export default function SignInSide() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    // <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -71,8 +71,7 @@ export default function SignInSide() {
             }}
           >
             <Logo/>
-            <Typography component="h2" variant="h5" sx={{mt: 6}}   >
-                {/*  mx: 8, my: 4*/}
+            <Typography component="h2" variant="h5" sx={{mt: 6}}   >{/*  mx: 8, my: 4*/}
               Log in to your account
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -107,10 +106,10 @@ export default function SignInSide() {
                 sx={{
                     mt: 3,
                     mb: 2,
-                    backgroundColor: '#606c38', 
+                    backgroundColor: '#222323', 
                     color: '#ffffff', 
                     '&:hover': {
-                      backgroundColor: '#283618', 
+                      backgroundColor: '#000000', 
                     },
                   }}   
                 >
@@ -120,6 +119,6 @@ export default function SignInSide() {
           </Box>
         </Grid>
       </Grid>
-     </ThemeProvider>
+    //  </ThemeProvider>
   );
 }

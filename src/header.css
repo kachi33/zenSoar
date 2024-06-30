@@ -14,14 +14,16 @@
 .header-logo{
     display: flex;
     align-items: center;
-    /* padding: 0 2rem; */
 }
-
+.logo-container{
+    padding: 0 2rem;
+    margin: 0 20px;
+    
+}
 .header-logo img{
     height: 40px;
     width: auto;
     align-self: center;
-    /* margin: 0 20px; */
     border-radius: 10px;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25);
 }

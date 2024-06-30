@@ -25,7 +25,9 @@ const Header = function() {
     
     return( 
         <header className='header'>
-            <Logo />
+            <div className='logo-container'>
+                <Logo />
+            </div>
             <nav className={`header-nav ${isVisible.navVisibilty ? 'visible' : ''}`}>
                 <ul>
                 <li><a href='#'>Home</a></li>
