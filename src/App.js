@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from './components/header.js';
+import './header.css'
+import Login from './components/auth/Login.js';
 
 
 const App = function() {
   return (
-    <Header/>
+    <Login/>
   );
 }
 
