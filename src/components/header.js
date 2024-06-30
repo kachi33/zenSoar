@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import '../header.css';
-import logo from '../images/logo.png';import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import Logo from './UI/Logo';
 
 
 
@@ -25,10 +25,7 @@ const Header = function() {
     
     return( 
         <header className='header'>
-            <div className='header-logo'>
-                <img alt='logo' src={logo} />
-                <h1 className= 'header-tagline'>Digital Lab Assistant</h1>
-            </div>
+            <Logo />
             <nav className={`header-nav ${isVisible.navVisibilty ? 'visible' : ''}`}>
                 <ul>
                 <li><a href='#'>Home</a></li>
