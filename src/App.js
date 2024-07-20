@@ -1,11 +1,20 @@
 import React from 'react';
 import './header.css'
-import Login from './components/auth/Login';
+import {ThemeProvider}  from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import combinedTheme from './theme/combinedTheme';
+import Layout from './Layout';
+
 
 
 const App = function() {
   return (
-    <Login />
+    <ThemeProvider theme={combinedTheme}>
+      <CssBaseline/>
+      <Layout/>
+
+
+  </ThemeProvider>
   );
 }
 
