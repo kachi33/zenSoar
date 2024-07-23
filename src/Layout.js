@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Header from './components/Header';
 import {alpha } from '@mui/material/styles';
+import Sidebar from './components/Sidebar';
 
 
 const Layout = () => {
@@ -19,15 +20,16 @@ const Layout = () => {
             backgroundColor: (theme) => alpha(theme.palette.fill.lightGreen, 1),
         }}      
     >
-        <Box 
+        <Sidebar/>
+        {/* <Box 
         sx={{ 
-            bgcolor: '#606C38', 
+            // backgroundColor: (theme) => alpha(theme.palette.fill.mediumGreen, 1),
             height: '100vh',
             width: '30%', 
             }} 
         >
 
-        </Box>
+        </Box> */}
 
         <Box 
         sx={{ 

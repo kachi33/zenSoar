@@ -61,74 +61,75 @@ const Header = function() {
     return (
         <Box sx={{ flexGrow: 1}}>
           <AppBar 
-          position="fixed"
-          sx={{ 
-            backgroundColor: (theme) => alpha(theme.palette.fill.default, 0),
-            width: 'calc(100% - 30%)', 
-        }}
-        >
-        <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}} >
-            
-              <Search>
-                <SearchIconWrapper>
-                  {/* <SearchIcon /> */}
-                    <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#000000",}} />                
-                    </SearchIconWrapper>
-                <StyledInputBase
+            position="fixed"
+            sx={{ 
+              backgroundColor: (theme) => alpha(theme.palette.fill.default, 0),
+              width: 'calc(100% - 25%)', 
+            }}
+          >
+          <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}} >
+              {/* Search input here */}
+            <Search>
+              <SearchIconWrapper>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#000000",}} />                
+              </SearchIconWrapper>
+              <StyledInputBase
                 placeholder="Search topics…"
                 inputProps={{ 'aria-label': 'search' }}
-                />
-              </Search>
+              />
+            </Search>
 
-              <Box sx={{ display:'flex'  }}>
-            <IconButton size="large" aria-label="show 9 new notifications" color="inherit"
-            sx={{
-             backgroundColor: (theme) => alpha(theme.palette.fill.default, 0),
-            '&:hover': {
-                backgroundColor: (theme) => alpha(theme.palette.fill.light, 1), // Ensuring the hover color remains the same
-             }
-             }}
-
-            >
-              <Badge badgeContent={4} color="error">
-                <FontAwesomeIcon 
-                icon={faBell} 
-                style={{  color: "#000000", 
-                }} 
-                />
-              </Badge>
-            </IconButton>
-
-            <Divider orientation="vertical" variant="middle" flexItem   
-            sx={{
-                mx: "10px",
-             }}
-            />
-
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              color="inherit"
-              sx={{
-                backgroundColor: (theme) => alpha(theme.palette.fill.darkGreen, 1),
-                '&:hover': {
+            <Box sx={{ display:'flex'  }}>
+              <IconButton 
+                size="large" 
+                aria-label="show 9 new notifications" 
+                color="inherit"
+                sx={{
+                  backgroundColor: (theme) => alpha(theme.palette.fill.default, 0),
+                  '&:hover': {
                     backgroundColor: (theme) => alpha(theme.palette.fill.light, 1), // Ensuring the hover color remains the same
-                },
-              }}
+                    }
+                  }}
               >
-              <Badge badgeContent={" "} color="error">
-              <FontAwesomeIcon 
-              icon={faUser}  
-              style={{ 
-                color: (theme) => alpha(theme.palette.color.light, 1), 
+                <Badge badgeContent={4} color="error">
+                  <FontAwesomeIcon 
+                  icon={faBell} 
+                  style={{  color: "#000000", 
+                  }} 
+                  />
+                </Badge>
+              </IconButton>
+
+              <Divider orientation="vertical" variant="middle" flexItem   
+              sx={{
+                  mx: "10px",
+              }}
+              />
+
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                color="inherit"
+                sx={{
+                  backgroundColor: (theme) => alpha(theme.palette.fill.darkGreen, 1),
+                  '&:hover': {
+                      backgroundColor: (theme) => alpha(theme.palette.fill.mediumGreen, 1), // Ensuring the hover color remains the same
+                  },
                 }}
-                 />
-              </Badge>
-            </IconButton>
-          </Box>
-              
-            </Toolbar>
+                >
+                <Badge badgeContent={" "} color="error">
+                <FontAwesomeIcon 
+                icon={faUser}  
+                style={{ 
+                  color: '#F8FAF0', 
+                  }}
+                  />
+                </Badge>
+              </IconButton>
+            </Box>
+                
+          </Toolbar>
           </AppBar>
         </Box>
       );  
