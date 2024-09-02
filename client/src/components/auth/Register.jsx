@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, TextField, Typography, Box } from '@mui/material';
 import axios from 'axios';
-import AuthLayout from './AuthLayout';  // Import the AuthLayout component
+import AuthLayout from '@components/auth/AuthLayout';  // Import the AuthLayout component
 
 const Register = () => {
   const navigate = useNavigate();
@@ -15,12 +15,14 @@ const Register = () => {
     const email = data.get('email');
     const password = data.get('password');
 
-    axios.post('http://localhost:3001/register', { username, email, password }, {
+    axios.post('http://localhost:5000/register', { username, email, password }, {
       headers: { 'Content-Type': 'application/json' },
     })
-      .then(result => {
-        console.log(result);
-        navigate('/login');
+      .then(response => {
+        if (response.data.status) {
+          console.log(response);
+          navigate('/login');
+        }
       })
       .catch(err => {
         if (err.response && err.response.status === 400) {
@@ -54,7 +56,7 @@ const Register = () => {
           margin="normal"
           required
           fullWidth
-          id="email"
+          id="email" // Email validation
           label="Email Address"
           name="email"
           autoComplete="email"

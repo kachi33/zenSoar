@@ -1,7 +1,7 @@
 import React from 'react';
 import { CssBaseline, Grid, Paper, Box, Typography, Snackbar, Alert } from '@mui/material';
-import Logo from '../UI/Logo';
-import exhibitImage from '../../images/exhibit01.jpg';
+import Logo from '@components/UI/Logo';
+import exhibitImage from '@images/exhibit01.jpg';
 
 const AuthLayout = ({ title, children, error, handleCloseSnackbar }) => {
   return (
@@ -22,15 +22,15 @@ const AuthLayout = ({ title, children, error, handleCloseSnackbar }) => {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <Box
           sx={{
-            my: 8,
+            my: 10,
             mx: 4,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'left',
+            alignItems: 'center',
           }}
         >
           <Logo />
-          <Typography component="h2" variant="h5" sx={{ mt: 6 }}>
+          <Typography component="h1" variant="h5" sx={{ mt: 6 }}>
             {title}
           </Typography>
           <Box sx={{ mt: 1 }}>
