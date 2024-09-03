@@ -59,7 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Header = function() {
     return (
-        <Box sx={{ flexGrow: 1}}>
+        <Box sx={{ backgroundColor: (theme) => alpha(theme.palette.fill.darkGreen, 1),
+        }}>
           <AppBar 
             position="fixed"
             sx={{ 
@@ -114,7 +115,7 @@ const Header = function() {
                 sx={{
                   backgroundColor: (theme) => alpha(theme.palette.fill.darkGreen, 1),
                   '&:hover': {
-                      backgroundColor: (theme) => alpha(theme.palette.fill.mediumGreen, 1), // Ensuring the hover color remains the same
+                    backgroundColor: (theme) => alpha(theme.palette.fill.mediumGreen, 1), // Ensuring the hover color remains the same
                   },
                 }}
                 >

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IconButton, Box, Drawer, Toolbar, Divider, List, ListItem, ListItemIcon, ListItemButton, ListItemText, Typography  } from '@mui/material';
 import {alpha } from '@mui/material/styles';
-import Logo from './UI/Logo';
+import Logo from './Logo';
 
 // import fontAwesomeIcons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

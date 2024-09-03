@@ -1,24 +1,21 @@
 import React from 'react';
-import './header.css'
-// import Sidebar from './components/Sidebar';
-import {ThemeProvider}  from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import combinedTheme from './theme/combinedTheme';
-// import Header from './components/Header';
-import Layout from './Layout';
-
-
+// import AppLayout from './components/UI/AppLayout'
+import Dashboard from './components/Dashboard';
+import{BrowserRouter,Routes,Route} from 'react-router-dom'
+import AuthProvider from './components/auth/AuthContext.jsx';
 
 const App = function() {
   return (
-    <ThemeProvider theme={combinedTheme}>
-      <CssBaseline/>
-      <Layout/>
-      {/* <Header/> */}
+    <AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        {/* <Route element={<AppLayout />}> */}
+          <Route path="/" element={<Dashboard />} />
+        {/* </Route> */}
+      </Routes>
+    </BrowserRouter>
+    </AuthProvider>
 
-
-      {/* <Sidebar/> */}
-  </ThemeProvider>
   );
 }
 
