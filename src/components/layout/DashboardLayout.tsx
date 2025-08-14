@@ -61,7 +61,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }
     <div>
       <Toolbar className='text-[#283618]'>
         <div className="flex items-center gap-2">
-          <img src="/src/assets/logo.svg" alt="ZenSoar Logo" className="w-8 h-8" />
+          <img src="/logo.svg" alt="ZenSoar Logo" className="w-8 h-8" />
           <Typography variant="h6" noWrap component="div" sx={{ color: '#283618' }}>
             ZenSoar
           </Typography>
