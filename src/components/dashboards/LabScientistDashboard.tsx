@@ -132,7 +132,7 @@ const LabScientistDashboard: React.FC = () => {
 
       <TableContainer component={Paper}>
         <Table>
-          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
+          <TableHead>
             <TableRow>
               <TableCell>Patient</TableCell>
               <TableCell>Test Name</TableCell>
@@ -197,7 +197,7 @@ const LabScientistDashboard: React.FC = () => {
       </Typography>
       <TableContainer component={Paper}>
         <Table>
-          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
+          <TableHead>
             <TableRow>
               <TableCell>Patient</TableCell>
               <TableCell>Test</TableCell>

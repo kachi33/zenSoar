@@ -28,6 +28,7 @@ import {
 import DashboardLayout from '../layout/DashboardLayout';
 import { mockPatients } from '../../data/mockData';
 import { mockUsers } from '../../data/mockUsers';
+import AnalyticsDashboard from '../analytics/AnalyticsDashboard';
 
 const AdminDashboard: React.FC = () => {
   const [activeView, setActiveView] = useState('overview');
@@ -140,7 +141,7 @@ const AdminDashboard: React.FC = () => {
       </Typography>
       <TableContainer component={Paper}>
         <Table>
-          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
+          <TableHead>
             <TableRow>
               <TableCell>User</TableCell>
               <TableCell>Email</TableCell>
@@ -192,7 +193,7 @@ const AdminDashboard: React.FC = () => {
       case 'users':
         return renderUsers();
       case 'analytics':
-        return <Typography variant="h4">Analytics Dashboard</Typography>;
+        return <AnalyticsDashboard />;
       case 'settings':
         return <Typography variant="h4">System Settings</Typography>;
       default:
