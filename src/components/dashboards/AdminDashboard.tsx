@@ -30,10 +30,10 @@ const AdminDashboard: React.FC = () => {
   ];
 
   const stats = [
-    { title: 'Total Patients', value: mockPatients.length, icon: <People />, color: 'primary' },
-    { title: 'Pending Tests', value: mockPatients.filter(p => p.status === 'pending').length, icon: <Science />, color: 'warning' },
-    { title: 'Completed Today', value: mockPatients.filter(p => p.status === 'completed').length, icon: <LocalHospital />, color: 'success' },
-    { title: 'Active Staff', value: 12, icon: <PersonAdd />, color: 'info' },
+    { title: 'Total Patients', value: mockPatients.length, icon: <People />, color: 'primary', onClick: () => setActiveView('users') },
+    { title: 'Pending Tests', value: mockPatients.filter(p => p.status === 'pending').length, icon: <Science />, color: 'warning', onClick: () => setActiveView('analytics') },
+    { title: 'Completed Today', value: mockPatients.filter(p => p.status === 'completed').length, icon: <LocalHospital />, color: 'success', onClick: () => setActiveView('analytics') },
+    { title: 'Active Staff', value: 12, icon: <PersonAdd />, color: 'info', onClick: () => setActiveView('users') },
   ];
 
   const renderOverview = () => (
@@ -49,7 +49,7 @@ const AdminDashboard: React.FC = () => {
       >
         {stats.map((stat, index) => (
           <Box flex="1" minWidth="250px" key={index}>
-            <Card>
+            <Card sx={{ cursor: 'pointer' }} onClick={stat.onClick}>
               <CardContent>
                 <Box display="flex" alignItems="center" justifyContent="space-between">
                   <Box>
