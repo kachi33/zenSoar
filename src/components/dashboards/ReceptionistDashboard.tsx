@@ -31,6 +31,7 @@ import {
 } from '@mui/icons-material';
 import DashboardLayout from '../layout/DashboardLayout';
 import { mockPatients} from '../../data/mockData';
+import UnderConstruction from '../common/UnderConstruction';
 
 const ReceptionistDashboard: React.FC = () => {
   const [activeView, setActiveView] = useState('patients');
@@ -234,11 +235,11 @@ const ReceptionistDashboard: React.FC = () => {
       case 'patients':
         return renderPatients();
       case 'appointments':
-        return <Typography variant="h4">Appointments</Typography>;
+        return <UnderConstruction title="Appointments" message="Appointment scheduling system is coming soon. You'll be able to book, modify, and track patient appointments here." />;
       case 'billing':
-        return <Typography variant="h4">Billing Management</Typography>;
+        return <UnderConstruction title="Billing Management" message="Comprehensive billing system is in development. Soon you'll be able to manage invoices, payments, and insurance claims." />;
       case 'registration':
-        return <Typography variant="h4">Patient Registration</Typography>;
+        return <UnderConstruction title="Patient Registration" message="Advanced patient registration system is being built. This will include form management, document upload, and verification workflows." />;
       default:
         return renderPatients();
     }

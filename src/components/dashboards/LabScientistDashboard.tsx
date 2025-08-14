@@ -29,6 +29,7 @@ import {
 } from '@mui/icons-material';
 import DashboardLayout from '../layout/DashboardLayout';
 import { mockPatients } from '../../data/mockData';
+import UnderConstruction from '../common/UnderConstruction';
 
 const LabScientistDashboard: React.FC = () => {
   const [activeView, setActiveView] = useState('tests');
@@ -227,7 +228,7 @@ const LabScientistDashboard: React.FC = () => {
       case 'results':
         return renderResults();
       case 'pending':
-        return <Typography variant="h4">Pending Reviews</Typography>;
+        return <UnderConstruction title="Pending Reviews" message="Review system for test results is being developed. Soon you'll be able to review and approve test results here." />;
       default:
         return renderTests();
     }
