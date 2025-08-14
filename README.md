@@ -1,53 +1,44 @@
-# zenSoar
+# ZenSoar - Diagnostic Laboratory Management System
 
-## 🧪 Diagnostics data Management System**
+A modern, role-based laboratory management platform built with React, TypeScript, and Firebase.
 
-A full-stack platform under development for managing diagnostic laboratory operations — including patient handling, test tracking, radiography, and admin workflows. The system is designed to be modular and scalable, with support for multiple independent labs.
+## 🌟 Features
 
----
+- **Role-Based Authentication** - Secure login system with three user types
+- **Admin Dashboard** - System overview, user management, and analytics
+- **Lab Scientist Portal** - Test assignment, results entry, and case management
+- **Receptionist Interface** - Patient registration, appointment scheduling, and billing
 
-## 📁 Project Structure
+## 🚀 Live Demo
 
-```
-/diagnostics-lab-management
-├── client/     # React app for receptionist, lab scientist, and radiographer
-├── admin/      # Next app for admin panel
-├── backend/    # Express backend with planned MongoDB integration
-```
+- **Demo URL**: [Your deployed link here]
+- **Admin Demo**: admin@zensoar.com / password123
+- **Lab Scientist Demo**: lab@zensoar.com / password123
+- **Receptionist Demo**: reception@zensoar.com / password123
 
----
+## 🛠 Tech Stack
 
-## 📦 Tech Stack (Planned)
+- **Frontend**: React 18, TypeScript, Material-UI
+- **Authentication**: Firebase Auth
+- **Routing**: React Router DOM
+- **Styling**: Material-UI + Tailwind CSS
+- **State Management**: React Context
 
-**Frontend**
-- React
-- Tailwind CSS
-- React Router
+## 📱 Screenshots
 
-**Backend**
-- Node.js + Express
-- MongoDB + Mongoose
-- JWT Authentication
+[Add screenshots of each dashboard here]
 
----
+## 🏗 Architecture
 
-## 🚧 Current Status
+- Role-based routing with protected routes
+- Context-based state management
+- Responsive design for all devices
+- Mock data integration ready for backend API
 
-This is the initial setup commit. Folder structures have been created and dependencies installed, but no features have been implemented yet.
+## 🚀 Getting Started
 
----
-
-## 🛣 Upcoming Features
-
-- Patient registration & management
-- Lab test assignment & result entry
-- Imaging requests & uploads (radiography)
-- Invoicing & payment tracking
-- Admin test management & analytics
-- Multi-lab support
-
----
-
-## 📄 License
-
-MIT License
+```bash
+git clone [your-repo-url]
+cd zensoar
+npm install
+npm start

@@ -12,7 +12,7 @@
 *next-env.d.ts
 *.next
 *.env
-
+*.claude
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
