@@ -75,7 +75,7 @@ const LabScientistDashboard: React.FC = () => {
         display="flex" 
         gap={3} 
         flexWrap="wrap" 
-        sx={{ mb: 3 }}
+        sx={{ mb: 5 }}
       >
         <Box flex="1" minWidth="300px">
           <Card>
@@ -132,7 +132,7 @@ const LabScientistDashboard: React.FC = () => {
 
       <TableContainer component={Paper}>
         <Table>
-          <TableHead>
+          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
             <TableRow>
               <TableCell>Patient</TableCell>
               <TableCell>Test Name</TableCell>
@@ -144,7 +144,7 @@ const LabScientistDashboard: React.FC = () => {
           </TableHead>
           <TableBody>
             {allTests.map((test, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} sx={{ backgroundColor: index % 2 === 1 ? '#f5f5f5' : 'transparent' }}>
                 <TableCell>
                   <Box>
                     <Typography variant="subtitle2">{test.patientName}</Typography>
@@ -171,6 +171,13 @@ const LabScientistDashboard: React.FC = () => {
                     size="small"
                     startIcon={test.results ? <Edit /> : <Add />}
                     onClick={() => handleAddResult(test)}
+                    sx={{
+                      color: '#bc6c25',
+                      fontWeight: 'bold',
+                      '&:hover': {
+                        backgroundColor: 'rgba(188, 108, 37, 0.1)',
+                      },
+                    }}
                   >
                     {test.results ? 'Edit Result' : 'Add Result'}
                   </Button>
@@ -190,7 +197,7 @@ const LabScientistDashboard: React.FC = () => {
       </Typography>
       <TableContainer component={Paper}>
         <Table>
-          <TableHead>
+          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
             <TableRow>
               <TableCell>Patient</TableCell>
               <TableCell>Test</TableCell>
@@ -200,7 +207,7 @@ const LabScientistDashboard: React.FC = () => {
           </TableHead>
           <TableBody>
             {allTests.filter(test => test.results).map((test, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} sx={{ backgroundColor: index % 2 === 1 ? '#f5f5f5' : 'transparent' }}>
                 <TableCell>{test.patientName}</TableCell>
                 <TableCell>{test.name}</TableCell>
                 <TableCell>{test.results}</TableCell>
@@ -251,10 +258,22 @@ const LabScientistDashboard: React.FC = () => {
             value={testResult}
             onChange={(e) => setTestResult(e.target.value)}
             placeholder="Enter test results, observations, and recommendations..."
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                  borderColor: '#283618',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                '&.Mui-focused': {
+                  color: '#283618',
+                },
+              },
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setResultDialog(false)}>Cancel</Button>
+          <Button onClick={() => setResultDialog(false)} sx={{ color: '#283618' }}>Cancel</Button>
           <Button onClick={handleSaveResult} variant="contained" sx={{
             backgroundColor: '#283618',
             '&:hover': {

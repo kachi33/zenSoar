@@ -61,7 +61,7 @@ const Login: React.FC = () => {
       >
         <Paper elevation={3} sx={{ padding: 4, width: '100%' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <img src="/src/assets/logo.svg" alt="ZenSoar Logo" className="w-16 h-16 mb-6" />
+            <img src="/logo.svg" alt="ZenSoar Logo" className="w-16 h-16 mb-6" />
             <Typography component="h1" variant="h4" gutterBottom>
               ZenSoar
             </Typography>
@@ -88,6 +88,18 @@ const Login: React.FC = () => {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#606c38',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  '&.Mui-focused': {
+                    color: '#606c38',
+                  },
+                },
+              }}
             />
             <TextField
               margin="normal"
@@ -100,6 +112,18 @@ const Login: React.FC = () => {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#606c38',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  '&.Mui-focused': {
+                    color: '#606c38',
+                  },
+                },
+              }}
             />
             <Button
               type="submit"
@@ -108,9 +132,9 @@ const Login: React.FC = () => {
               sx={{ 
                 mt: 3, 
                 mb: 2,
-                backgroundColor: '#283618',
+                backgroundColor: '#606c38',
                 '&:hover': {
-                  backgroundColor: '#1f2a1b'
+                  backgroundColor: '#283618'
                 }
               }}
               disabled={loading}

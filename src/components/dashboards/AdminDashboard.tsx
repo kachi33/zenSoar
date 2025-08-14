@@ -55,7 +55,7 @@ const AdminDashboard: React.FC = () => {
         display="flex" 
         gap={3} 
         flexWrap="wrap" 
-        sx={{ mb: 3 }}
+        sx={{ mb: 5 }}
       >
         {stats.map((stat, index) => (
           <Box flex="1" minWidth="250px" key={index}>
@@ -140,7 +140,7 @@ const AdminDashboard: React.FC = () => {
       </Typography>
       <TableContainer component={Paper}>
         <Table>
-          <TableHead>
+          <TableHead sx={{ backgroundColor: '#ccd5ae' }}>
             <TableRow>
               <TableCell>User</TableCell>
               <TableCell>Email</TableCell>
@@ -150,8 +150,8 @@ const AdminDashboard: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {mockUsers.map((user) => (
-              <TableRow key={user.id}>
+            {mockUsers.map((user, index) => (
+              <TableRow key={user.id} sx={{ backgroundColor: index % 2 === 1 ? '#f5f5f5' : 'transparent' }}>
                 <TableCell>
                   <Box display="flex" alignItems="center" gap={2}>
                     <Avatar>

@@ -89,7 +89,7 @@ const ReceptionistDashboard: React.FC = () => {
         display="flex" 
         gap={3} 
         flexWrap="wrap" 
-        sx={{ mb: 3 }}
+        sx={{ mb: 5 }}
       >
         <Box flex="1" minWidth="250px">
           <Card>
@@ -169,8 +169,8 @@ const ReceptionistDashboard: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {mockPatients.map((patient) => (
-              <TableRow key={patient.id}>
+            {mockPatients.map((patient, index) => (
+              <TableRow key={patient.id} sx={{ backgroundColor: index % 2 === 1 ? '#f5f5f5' : 'transparent' }}>
                 <TableCell>
                   <Typography variant="subtitle2">{patient.name}</Typography>
                 </TableCell>
@@ -211,7 +211,13 @@ const ReceptionistDashboard: React.FC = () => {
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Button size="small" startIcon={<Edit />}>
+                  <Button size="small" startIcon={<Edit />} sx={{
+                    color: '#bc6c25',
+                    fontWeight: 'bold',
+                    '&:hover': {
+                      backgroundColor: 'rgba(188, 108, 37, 0.1)',
+                    },
+                  }}>
                     Edit
                   </Button>
                 </TableCell>
@@ -255,6 +261,18 @@ const ReceptionistDashboard: React.FC = () => {
             variant="outlined"
             value={newPatient.name}
             onChange={(e) => setNewPatient({...newPatient, name: e.target.value})}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                  borderColor: '#283618',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                '&.Mui-focused': {
+                  color: '#283618',
+                },
+              },
+            }}
           />
           <TextField
             margin="dense"
@@ -264,6 +282,18 @@ const ReceptionistDashboard: React.FC = () => {
             variant="outlined"
             value={newPatient.age}
             onChange={(e) => setNewPatient({...newPatient, age: e.target.value})}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                  borderColor: '#283618',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                '&.Mui-focused': {
+                  color: '#283618',
+                },
+              },
+            }}
           />
           <TextField
             margin="dense"
@@ -272,6 +302,18 @@ const ReceptionistDashboard: React.FC = () => {
             variant="outlined"
             value={newPatient.phone}
             onChange={(e) => setNewPatient({...newPatient, phone: e.target.value})}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                  borderColor: '#283618',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                '&.Mui-focused': {
+                  color: '#283618',
+                },
+              },
+            }}
           />
           <TextField
             margin="dense"
@@ -281,10 +323,22 @@ const ReceptionistDashboard: React.FC = () => {
             variant="outlined"
             value={newPatient.email}
             onChange={(e) => setNewPatient({...newPatient, email: e.target.value})}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused fieldset': {
+                  borderColor: '#283618',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                '&.Mui-focused': {
+                  color: '#283618',
+                },
+              },
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setPatientDialog(false)}>Cancel</Button>
+          <Button onClick={() => setPatientDialog(false)} sx={{ color: '#283618' }}>Cancel</Button>
           <Button onClick={handleSavePatient} variant="contained" sx={{
             backgroundColor: '#283618',
             '&:hover': {

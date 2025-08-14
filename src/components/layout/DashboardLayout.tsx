@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import {
-  AppBar,
   Box,
   CssBaseline,
   Drawer,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -12,17 +10,8 @@ import {
   ListItemText,
   Toolbar,
   Typography,
-  Avatar,
-  Menu,
-  MenuItem,
-  Divider
 } from '@mui/material';
-import {
-  Menu as MenuIcon,
-  Logout,
-  Person
-} from '@mui/icons-material';
-import { useAuth } from '../../contexts/AuthContext';
+import Navbar from '../ui/Navbar';
 
 const drawerWidth = 240;
 
@@ -37,24 +26,9 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { currentUser, logout } = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-  };
-
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleLogout = async () => {
-    handleClose();
-    await logout();
   };
 
   const drawer = (
@@ -67,7 +41,6 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }
           </Typography>
         </div>
       </Toolbar>
-      <Divider />
       <List >
         {menuItems.map((item, index) => (
           <ListItem key={index} disablePadding className="mt-8">
@@ -84,72 +57,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          backgroundColor: '#283618',
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            Dashboard
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <Avatar sx={{ width: 32, height: 32 }}>
-                <Person />
-              </Avatar>
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-              className="mt-8"
-            >
-              <MenuItem disabled>
-                <Typography variant="body2">
-                  {currentUser?.name}
-                </Typography>
-              </MenuItem>
-              <Divider />
-              <MenuItem onClick={handleLogout}>
-                <ListItemIcon>
-                  <Logout fontSize="small" />
-                </ListItemIcon>
-                Logout
-              </MenuItem>
-            </Menu>
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <Navbar drawerWidth={drawerWidth} onMenuClick={handleDrawerToggle} />
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -181,7 +89,13 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ 
+          flexGrow: 1, 
+          p: 3, 
+          width: { sm: `calc(100% - ${drawerWidth}px)` }, 
+          backgroundColor: '#f5f5f5',
+          minHeight: '100vh'
+        }}
       >
         <Toolbar />
         {children}
