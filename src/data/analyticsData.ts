@@ -1,4 +1,4 @@
-import { format, subDays, startOfWeek, endOfWeek } from 'date-fns';
+import { format, subDays } from 'date-fns';
 
 // Generate realistic analytics data
 export const generateAnalyticsData = () => {
