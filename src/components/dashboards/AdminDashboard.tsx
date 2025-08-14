@@ -29,6 +29,7 @@ import DashboardLayout from '../layout/DashboardLayout';
 import { mockPatients } from '../../data/mockData';
 import { mockUsers } from '../../data/mockUsers';
 import AnalyticsDashboard from '../analytics/AnalyticsDashboard';
+import SystemSettings from '../settings/SystemSettings';
 
 const AdminDashboard: React.FC = () => {
   const [activeView, setActiveView] = useState('overview');
@@ -195,7 +196,7 @@ const AdminDashboard: React.FC = () => {
       case 'analytics':
         return <AnalyticsDashboard />;
       case 'settings':
-        return <Typography variant="h4">System Settings</Typography>;
+        return <SystemSettings />;
       default:
         return renderOverview();
     }
