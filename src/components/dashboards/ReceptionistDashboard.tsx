@@ -234,7 +234,7 @@ const ReceptionistDashboard: React.FC = () => {
 
   return (
     <>
-      <DashboardLayout title="Receptionist Dashboard" menuItems={menuItems}>
+      <DashboardLayout  menuItems={menuItems}>
         {renderContent()}
       </DashboardLayout>
 

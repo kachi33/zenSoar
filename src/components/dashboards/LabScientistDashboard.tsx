@@ -228,7 +228,7 @@ const LabScientistDashboard: React.FC = () => {
 
   return (
     <>
-      <DashboardLayout title="Lab Scientist Dashboard" menuItems={menuItems}>
+      <DashboardLayout  menuItems={menuItems}>
         {renderContent()}
       </DashboardLayout>
 

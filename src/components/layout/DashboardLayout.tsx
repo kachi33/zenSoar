@@ -28,7 +28,6 @@ const drawerWidth = 240;
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
-  title: string;
   menuItems: Array<{
     text: string;
     icon: React.ReactNode;
@@ -36,7 +35,7 @@ interface DashboardLayoutProps {
   }>;
 }
 
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title, menuItems }) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { currentUser, logout } = useAuth();
@@ -60,15 +59,18 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title, menu
 
   const drawer = (
     <div>
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div" sx={{ color: 'primary.main' }}>
-          ZenSoar
-        </Typography>
+      <Toolbar className='text-[#283618]'>
+        <div className="flex items-center gap-2">
+          <img src="/src/assets/logo.svg" alt="ZenSoar Logo" className="w-8 h-8" />
+          <Typography variant="h6" noWrap component="div" sx={{ color: '#283618' }}>
+            ZenSoar
+          </Typography>
+        </div>
       </Toolbar>
       <Divider />
-      <List>
+      <List >
         {menuItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
+          <ListItem key={index} disablePadding className="mt-8">
             <ListItemButton onClick={item.onClick}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
@@ -87,6 +89,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title, menu
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: '#283618',
         }}
       >
         <Toolbar>
@@ -100,12 +103,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title, menu
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            {title}
+            Dashboard
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Typography variant="body2">
-              {currentUser?.name}
-            </Typography>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -133,6 +133,12 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title, menu
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+              <MenuItem disabled>
+                <Typography variant="body2">
+                  {currentUser?.name}
+                </Typography>
+              </MenuItem>
+              <Divider />
               <MenuItem onClick={handleLogout}>
                 <ListItemIcon>
                   <Logout fontSize="small" />

@@ -12,7 +12,6 @@ import {
   Chip,
   Stack
 } from '@mui/material';
-import { LocalHospital } from '@mui/icons-material';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -62,7 +61,7 @@ const Login: React.FC = () => {
       >
         <Paper elevation={3} sx={{ padding: 4, width: '100%' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <LocalHospital sx={{ fontSize: 40, color: 'primary.main', mb: 2 }} />
+            <img src="/src/assets/logo.svg" alt="ZenSoar Logo" className="w-16 h-16 mb-6" />
             <Typography component="h1" variant="h4" gutterBottom>
               ZenSoar
             </Typography>

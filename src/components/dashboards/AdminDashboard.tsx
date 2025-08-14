@@ -39,7 +39,7 @@ const AdminDashboard: React.FC = () => {
   const renderOverview = () => (
     <Box>
       <Typography variant="h4" gutterBottom>
-        System Overview
+        Overview
       </Typography>
       <Box 
         display="flex" 
@@ -83,7 +83,7 @@ const AdminDashboard: React.FC = () => {
             </Typography>
             {mockPatients.slice(0, 5).map((patient) => (
               <Box key={patient.id} sx={{ mb: 2, p: 2, border: '1px solid #e0e0e0', borderRadius: 1 }}>
-                <Box display="flex" justifyContent="space-between" alignItems="center">
+                <Box className="flex items-center justify-between">
                   <Box>
                     <Typography variant="subtitle1">{patient.name}</Typography>
                     <Typography variant="body2" color="textSecondary">
@@ -139,7 +139,7 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <DashboardLayout title="Admin Dashboard" menuItems={menuItems}>
+    <DashboardLayout menuItems={menuItems}>
       {renderContent()}
     </DashboardLayout>
   );

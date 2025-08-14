@@ -2,16 +2,16 @@
 
 A modern, role-based laboratory management platform built with React, TypeScript, and Firebase.
 
-## 🌟 Features
+## Features
 
 - **Role-Based Authentication** - Secure login system with three user types
 - **Admin Dashboard** - System overview, user management, and analytics
 - **Lab Scientist Portal** - Test assignment, results entry, and case management
 - **Receptionist Interface** - Patient registration, appointment scheduling, and billing
 
-## 🚀 Live Demo
+## Live Demo
 
-- **Demo URL**: [Your deployed link here]
+- **Demo URL**: [Demo](https://zen-soar-uadq.vercel.app/)
 - **Admin Demo**: admin@zensoar.com / password123
 - **Lab Scientist Demo**: lab@zensoar.com / password123
 - **Receptionist Demo**: reception@zensoar.com / password123
@@ -35,10 +35,25 @@ A modern, role-based laboratory management platform built with React, TypeScript
 - Responsive design for all devices
 - Mock data integration ready for backend API
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
-git clone [your-repo-url]
+git clone [https://github.com/kachi33/zenSoar]
 cd zensoar
 npm install
 npm start
+```
+
+## User Roles
+
+- Admin: System management, analytics, user oversight
+- Lab Scientist: Test processing, results entry, quality control
+- Receptionist: Patient intake, scheduling, billing management
+
+## 📈 Future Enhancements
+
+- Backend API integration
+- Real-time notifications
+- Advanced reporting
+- Mobile app version
+

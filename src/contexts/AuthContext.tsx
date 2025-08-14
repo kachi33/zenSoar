@@ -25,14 +25,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Determine user role based on email
   const getUserRole = (email: string): UserRole => {
     if (email.includes('admin')) return 'admin';
     if (email.includes('lab')) return 'lab_scientist';
     return 'receptionist';
   };
 
-  // Get display name from email
   const getDisplayName = (email: string): string => {
     return email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   };
