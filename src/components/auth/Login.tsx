@@ -105,7 +105,14 @@ const Login: React.FC = () => {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ 
+                mt: 3, 
+                mb: 2,
+                backgroundColor: '#283618',
+                '&:hover': {
+                  backgroundColor: '#1f2a1b'
+                }
+              }}
               disabled={loading}
             >
               {loading ? <CircularProgress size={24} /> : 'Sign In'}

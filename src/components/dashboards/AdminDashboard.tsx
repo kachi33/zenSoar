@@ -5,7 +5,14 @@ import {
   Typography,
   Box,
   Paper,
-  Chip
+  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Avatar
 } from '@mui/material';
 import {
   Dashboard,
@@ -14,10 +21,13 @@ import {
   Settings,
   LocalHospital,
   Science,
-  PersonAdd
+  PersonAdd,
+  AdminPanelSettings,
+  Person
 } from '@mui/icons-material';
 import DashboardLayout from '../layout/DashboardLayout';
 import { mockPatients } from '../../data/mockData';
+import { mockUsers } from '../../data/mockUsers';
 
 const AdminDashboard: React.FC = () => {
   const [activeView, setActiveView] = useState('overview');
@@ -123,12 +133,64 @@ const AdminDashboard: React.FC = () => {
     </Box>
   );
 
+  const renderUsers = () => (
+    <Box>
+      <Typography variant="h4" gutterBottom>
+        User Management
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>User</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Role</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>Last Login</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {mockUsers.map((user) => (
+              <TableRow key={user.id}>
+                <TableCell>
+                  <Box display="flex" alignItems="center" gap={2}>
+                    <Avatar>
+                      {user.role === 'Admin' ? <AdminPanelSettings /> : 
+                       user.role === 'Lab Scientist' ? <Science /> : <Person />}
+                    </Avatar>
+                    <Typography variant="body1">{user.name}</Typography>
+                  </Box>
+                </TableCell>
+                <TableCell>{user.email}</TableCell>
+                <TableCell>
+                  <Chip 
+                    label={user.role} 
+                    color={user.role === 'Admin' ? 'error' : user.role === 'Lab Scientist' ? 'primary' : 'secondary'}
+                    size="small"
+                  />
+                </TableCell>
+                <TableCell>
+                  <Chip 
+                    label={user.status} 
+                    color={user.status === 'Active' ? 'success' : 'default'}
+                    size="small"
+                  />
+                </TableCell>
+                <TableCell>{user.lastLogin}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
+  );
+
   const renderContent = () => {
     switch (activeView) {
       case 'overview':
         return renderOverview();
       case 'users':
-        return <Typography variant="h4">User Management</Typography>;
+        return renderUsers();
       case 'analytics':
         return <Typography variant="h4">Analytics Dashboard</Typography>;
       case 'settings':
