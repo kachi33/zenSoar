@@ -74,6 +74,12 @@ const ReceptionistDashboard: React.FC = () => {
           variant="contained"
           startIcon={<Add />}
           onClick={handleAddPatient}
+          sx={{
+            backgroundColor: '#283618',
+            '&:hover': {
+              backgroundColor: '#1f2a1b'
+            }
+          }}
         >
           Add New Patient
         </Button>
@@ -279,7 +285,12 @@ const ReceptionistDashboard: React.FC = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setPatientDialog(false)}>Cancel</Button>
-          <Button onClick={handleSavePatient} variant="contained">
+          <Button onClick={handleSavePatient} variant="contained" sx={{
+            backgroundColor: '#283618',
+            '&:hover': {
+              backgroundColor: '#1f2a1b'
+            }
+          }}>
             Add Patient
           </Button>
         </DialogActions>

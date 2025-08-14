@@ -255,7 +255,12 @@ const LabScientistDashboard: React.FC = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setResultDialog(false)}>Cancel</Button>
-          <Button onClick={handleSaveResult} variant="contained">
+          <Button onClick={handleSaveResult} variant="contained" sx={{
+            backgroundColor: '#283618',
+            '&:hover': {
+              backgroundColor: '#1f2a1b'
+            }
+          }}>
             Save Result
           </Button>
         </DialogActions>
