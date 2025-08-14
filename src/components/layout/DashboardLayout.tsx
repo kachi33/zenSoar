@@ -132,6 +132,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, menuItems }
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
+              className="mt-8"
             >
               <MenuItem disabled>
                 <Typography variant="body2">
